@@ -19,19 +19,19 @@ class ChinaController extends Controller
 
         $form = new Form($request->all());
         $form->method('GET');
-        $form->action('/demo/china/cascading-select');
+        $form->action('/china/cascading-select');
 
         $form->select('province')->options(
 
             ChinaArea::province()->pluck('name', 'id')
 
-        )->load('city', '/demo/api/china/city');
+        )->load('city', '/api/china/city');
 
         $form->select('city')->options(function ($id) {
 
             return ChinaArea::options($id);
 
-        })->load('district', '/demo/api/china/district');
+        })->load('district', '/api/china/district');
 
         $form->select('district')->options(function ($id) {
 

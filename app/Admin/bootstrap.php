@@ -49,4 +49,4 @@ Admin::navbar(function (\Encore\Admin\Widgets\Navbar $navbar) {
     $navbar->left(new Nav\Dropdown());
 });
 
-
+app('view')->prependNamespace('admin', resource_path('views/admin'));

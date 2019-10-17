@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DenyRoutes
 {
-    protected $disabledMethods = ['DELETE', 'PUT'];
+    protected $disabledMethods = [];
 
     protected $routes = [
         'post' => [

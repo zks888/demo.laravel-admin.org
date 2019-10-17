@@ -372,34 +372,57 @@ return [
     |
     */
     'extensions' => [
-
-        'media-manager' => [
-            'disk' => 'uploads'
-        ],
-
         'api-tester' => [
+            // route prefix for APIs
             'prefix' => 'api',
-
+            // auth guard for api
             'guard'  => 'api',
-
+            // If you are not using the default user model as the authentication model, set it up
             'user_retriever' => function ($id) {
                 return \App\User::find($id);
             },
         ],
-
-        'phpinfo' => [
-            'what' => INFO_ALL^INFO_VARIABLES^INFO_ENVIRONMENT
-        ],
-
-        'wang-editor' => [
-
-            // 如果要关掉这个扩展，设置为false
+        'gridexporter' => [
+            // Set this to false if you want to disable this extension
             'enable' => true,
-
+        ],
+        'material-ui' => [
+            // If the value is set to false, this extension will be disabled
+            'enable' => true
+        ],
+        'cropper' => [
+            // If the value is set to false, this extension will be disabled
+            'enable' => true,
+        ],
+        'china-distpicker' => [
+            // If the value is set to false, this extension will be disabled
+            'enable' => true,
+        ],
+        'breadcrumb' => [
+            // If the value is set to false, this extension will be disabled
+            'enable' => true,
+        ],
+        'crontab' => [
+            // If the value is set to false, this extension will be disabled
+            'enable' => true,
+        ],
+        'daterangepicker' => [
+            // Set to `false` if you want to disable this extension
+            'enable' => true,
+            // Find more configurations http://www.daterangepicker.com/
+            'config' => []
+        ],
+        'media-manager' => [
+            // Select a local disk that you configured in `config/filesystem.php`
+            'disk' => 'public'
+        ],
+        'wang-editor' => [
+            // Set to `false` if you want to disable this extension
+            'enable' => true,
             // 编辑器的配置
             'config' => [
                 'uploadImgServer' => '/upload',
             ]
         ]
-    ]
+    ],
 ];
